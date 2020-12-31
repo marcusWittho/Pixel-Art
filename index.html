@@ -3,29 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Arte Com Pixels</title>
 </head>
 <body>
-  <h1 id="title">Paleta de Cores</h1>
+  <header class="header">
+    <h1 class="title">Pixel-Art</h1>
+
+    <input id="slide-bar" class="slide-bar" type="range" value="5" min="5" max="50" step="1">
+    <input id="board-size" class="board-size" type="number" value="5" class="inValue" min="1" max="50">
+
+    <button id="generate-board" class="generate-board" >VQV</button>
+    <button id="clear-board" class="clear-board">Limpar</button>
+  </header>
 
   <div id="color-palette">
     <div class="color"></div>
     <div class="color"></div>
     <div class="color"></div>
     <div class="color"></div>
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="color"></div>
   </div>
 
-  <button id="clear-board">Limpar</button>
-
-  <input id="slideBar" type="range" min="5" max="50" step="1">
-  <input id="board-size" type="number" class="inValue" min="1" max="50">
-
-  <button id="generate-board">VQV</button>
-
-  <div id="pixel-board" class="board">
-    <!-- Populado pela função createBoard -->
-  </div>
+  <div id="pixel-board" class="board"></div>
+  <audio src="sound/drop-sound.mp3"></audio>
   <script src="script.js"></script>
 </body>
 </html>

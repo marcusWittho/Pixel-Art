@@ -1,16 +1,114 @@
 body {
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 
+.header {
+  background-color: rgb(141, 226, 255);
+  border-bottom: 4px solid rgb(35, 123, 255);
+  font-family: 'Press Start 2P', cursive;
+  height: 85px;
+}
+
+.title {
+  margin: 0;
+  padding: 10px 0 10px 0;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.board-size {
+  background-color: rgb(172, 254, 255);
+  border: none;
+  border-bottom: 3px solid rgb(35, 123, 255);
+  border-radius: 8px 8px 0 0;
+  padding: 3px 7px;
+  outline: none;
+  width: 37px;
+  transition: all 400ms ease-in-out;
+  text-align: center;
+}
+
+.board-size:hover, .board-size:focus {
+  background-color: rgb(200, 255, 255);
+  box-shadow: 2px 2px 3px rgba(161, 108, 108, 0.2);
+}
+
+.generate-board, .clear-board {
+  color: rgb(51, 51, 51);
+  border: none;
+  outline: none;
+  background-color: rgb(141, 226, 255);
+	transition: all 0.3s;
+	position: relative;
+  transition: all 0.3s;
+}
+
+.generate-board::before, .clear-board::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.3s;
+	border-top-width: 1.2px;
+	border-bottom-width: 1.2px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: rgba(51, 51, 51, 0.5);
+	border-bottom-color: rgba(51, 51, 51, 0.5);
+	transform: scale(0.1, 1);
+}
+.generate-board:hover, .clear-board:hover {
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+.generate-board:hover::before, .clear-board:hover::before {
+	opacity: 1;
+	transform: scale(1, 1);
+}
+.generate-board::after, .clear-board::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.3s;
+	background-color: rgba(255,255,255,0.1);
+}
+.generate-board:hover::after, .clear-board:hover::after {
+	opacity: 0;
+	transform: scale(0.1, 1);
+}
+
 .color {
-  border: 1px solid black;
+  border-radius: 0% 50% 50% 50%;
+  border: 1px solid rgb(220, 220, 220);
   display: inline-block;
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  margin-top: 10px;
+  transition: all 200ms ease-in-out;
+  width: 35px;
+}
+
+.color:hover {
+  transform: rotate(45deg);
+  box-shadow: inset -15px 7px 5px -8px rgba(255, 255, 255, 0.5);
+}
+
+#color-palette div + div {
+  margin-left: 10px;
 }
 
 .board {
   line-height: 0;
+  border: 2px solid  black;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .pixel {
