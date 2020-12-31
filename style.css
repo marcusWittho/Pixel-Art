@@ -6,6 +6,7 @@ body {
 
 .header {
   background-color: rgb(141, 226, 255);
+  border-bottom: 4px solid rgb(35, 123, 255);
   font-family: 'Press Start 2P', cursive;
   height: 85px;
 }
@@ -19,12 +20,13 @@ body {
 .board-size {
   background-color: rgb(172, 254, 255);
   border: none;
-  border-bottom: 3px solid #00d9ff;
+  border-bottom: 3px solid rgb(35, 123, 255);
   border-radius: 8px 8px 0 0;
   padding: 3px 7px;
   outline: none;
-  width: 34px;
-  transition: all 300ms ease-in-out;
+  width: 37px;
+  transition: all 400ms ease-in-out;
+  text-align: center;
 }
 
 .board-size:hover, .board-size:focus {
@@ -85,14 +87,28 @@ body {
 }
 
 .color {
-  border: 1px solid black;
+  border-radius: 0% 50% 50% 50%;
+  border: 1px solid rgb(220, 220, 220);
   display: inline-block;
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  margin-top: 10px;
+  transition: all 200ms ease-in-out;
+  width: 35px;
+}
+
+.color:hover {
+  transform: rotate(45deg);
+  box-shadow: inset -15px 7px 5px -8px rgba(255, 255, 255, 0.5);
+}
+
+#color-palette div + div {
+  margin-left: 10px;
 }
 
 .board {
   line-height: 0;
+  border: 2px solid  black;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .pixel {

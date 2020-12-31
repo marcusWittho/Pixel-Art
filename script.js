@@ -102,6 +102,9 @@ colorPalette.addEventListener('click', function (event) {
   if (event.target.className === 'color') {
     event.target.classList.add('selected');
     savedColor = event.target.style.backgroundColor;
+    const audio = document.querySelector('audio');
+    audio.currentTime = 0.2;
+    audio.play(0.7);
   }
 });
 
@@ -136,3 +139,9 @@ slideBar.addEventListener('input', () => {
     createBoard();
   }
 })
+
+// Cabelos: (219, 15, 0), (179, 12, 0);
+// Pele: (240, 232, 188), (238, 236, 220);
+// Blusa: (150, 211, 240), (107, 202, 240);
+// Calças: (196, 111, 75);
+// Mochila: (184, 182, 176);
