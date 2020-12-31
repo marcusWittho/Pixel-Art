@@ -4,6 +4,7 @@ const colorPalette = document.querySelector('#color-palette');
 const btnClear = document.querySelector('#clear-board');
 const inBoardSize = document.querySelector('#board-size');
 const btnGenerateBoard = document.querySelector('#generate-board');
+const slideBar = document.querySelector('#slide-bar');
 
 // cor inicial dos pixels de referência
 colors[0].style.backgroundColor = 'black';
@@ -35,6 +36,14 @@ colorizePalette();
 function createPixel() {
   const lineOfPixels = document.createElement('div');
   lineOfPixels.className = 'pixel';
+
+  if (inBoardSize.value >= 20 && inBoardSize.value <= 30) {
+    lineOfPixels.style.width = '25px';
+    lineOfPixels.style.height = '25px';
+  } else if (inBoardSize.value >= 30 && inBoardSize.value <= 50) {
+    lineOfPixels.style.width = '15px';
+    lineOfPixels.style.height = '15px';
+  }
   pixelBoard.appendChild(lineOfPixels);
 }
 
@@ -71,9 +80,10 @@ function createBoard() {
       createPixel();
     }
   }
-  pixelBoard.style.width = `${userInput * colors[0].offsetWidth}px`;
-  pixelBoard.style.height = `${userInput * colors[0].offsetWidth}px`;
-  pixelBoard.style.margin = 'auto';
+  const pixel = document.querySelectorAll('.pixel');
+  pixelBoard.style.width = `${userInput * pixel[0].offsetWidth}px`;
+  pixelBoard.style.height = `${userInput * pixel[0].offsetWidth}px`;
+  pixelBoard.style.margin = '0 auto';
 }
 createBoard();
 
@@ -117,3 +127,12 @@ inBoardSize.addEventListener('keypress', function (tecla) {
     createBoard();
   }
 });
+
+slideBar.addEventListener('input', () => {
+  inBoardSize.value = slideBar.value;
+    if (inBoardSize.value === '') {
+    alert('Board inválido!');
+  } else {
+    createBoard();
+  }
+})
