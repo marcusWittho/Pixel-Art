@@ -18,9 +18,9 @@ body {
 }
 
 .board-size {
-  background-color: rgb(172, 254, 255);
+  background-color: transparent;
   border: none;
-  border-bottom: 3px solid rgb(35, 123, 255);
+  border-bottom: 2px solid rgb(35, 123, 255);
   border-radius: 8px 8px 0 0;
   padding: 3px 7px;
   outline: none;
@@ -30,7 +30,6 @@ body {
 }
 
 .board-size:hover, .board-size:focus {
-  background-color: rgb(200, 255, 255);
   box-shadow: 2px 2px 3px rgba(161, 108, 108, 0.2);
 }
 
